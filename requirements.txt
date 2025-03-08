@@ -1,0 +1,31 @@
+# GUI开发
+tkinter
+PyQt5==5.15.7
+
+# 基础工具
+pyautogui==0.9.53
+Pillow==9.5.0
+pygame==2.5.0
+
+# 数据处理
+openpyxl==3.1.2
+pandas==2.0.3
+matplotlib==3.7.2
+
+# 扩展功能
+opencv-python==4.8.1.78
+SpeechRecognition==3.10.0
+python-docx==0.8.11
+
+# 打包工具
+PyInstaller==5.13.0
+cx-Freeze==6.15.0
+
+# 协作开发
+pytest==7.4.2
+black==23.9.1
+pre-commit==3.3.3
+
+# 扩展增强
+PyQtGraph==0.13.3
+requests==2.31.0
