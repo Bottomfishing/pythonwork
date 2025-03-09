@@ -5,7 +5,7 @@ class MainWindow:
     """
     主窗口控制器
     
-    职责：
+    功能：
     - 管理主窗口布局和尺寸
     - 协调导航菜单与内容区域
     - 处理模块切换时的界面更新
@@ -14,8 +14,9 @@ class MainWindow:
     1. 采用pack布局管理器
     2. 内容区域使用Frame作为容器
     3. 通过destroy()方法清理旧内容
+
     """
-    def __init__(self, master):
+    def __init__(self, master): #构造函数/初始化方法  #在Tkinter中，master指的是父窗口或主窗口，用于创建新的窗口或组件。
         self.master = master
         self.master.title("Python可视化工具箱")
         self.master.geometry("800x600")

@@ -25,7 +25,13 @@ class NavigationMenu:
         self.master = master
         
         # 创建左侧导航栏
+
+        # `tk.Frame`：Tkinter库中的一个组件，用于创建一个矩形的容器，可用于组织其他组件。
+        # `master`：指定该组件的父容器。在这个例子中，`master`是一个Tkinter的根窗口对象。
         self.sidebar = tk.Frame(master, width=200, bg="#2c3e50", height=600)
+        # `pack`：是Tkinter中用于布局组件的方法之一，用于将组件放置在父容器中。
+        # `side=tk.LEFT`：指定框架在其父窗口中停靠的位置，这里是停靠在左边。
+        # `fill=tk.Y`：指定框架在垂直方向上填充可用空间，即框架的高度会自动调整以填充父窗口的垂直空间。
         self.sidebar.pack(side=tk.LEFT, fill=tk.Y)
         
         # 添加导航按钮
@@ -33,6 +39,8 @@ class NavigationMenu:
         self.create_button("连点器", self.add_clicker_module)
         self.create_button("截图工具", self.add_screenshot_module)
         self.create_button("小游戏集合", self.add_games_module)
+        self.create_button("更多功能", self.add_more_module)
+
     
     def create_button(self, text, command):
         """
@@ -48,19 +56,31 @@ class NavigationMenu:
         - activebackground: 点击状态背景色
         - width: 固定按钮宽度保持布局统一
         """
-        btn = tk.Button(self.sidebar, 
-                      text=text,
-                      font=("Microsoft YaHei", 12),
-                      bg="#34495e",
-                      fg="white",
-                      activebackground="#3498db",
-                      command=command,
-                      width=18)
-        btn.pack(pady=5, padx=10)
+        if text == "功能导航":
+            # 使用Label组件实现标题效果
+            label = tk.Label(self.sidebar,
+                           text=text,
+                           font=("Microsoft YaHei", 12, "bold"),
+                           fg="white",
+                           bg="#2c3e50",
+                           pady=8)
+            label.pack()
+        else:
+            btn = tk.Button(self.sidebar, 
+                          text=text,
+                          font=("Microsoft YaHei", 12),
+                          bg="#34495e",
+                          fg="white",
+                          activebackground="#3498db",
+                          command=command,
+                          width=18,
+                          relief="flat")
+            btn.pack(pady=5, padx=10)
 
     def add_clicker_module(self):
         """
-        加载连点器模块
+        加载连点器模块 
+        
         
         实现逻辑：
         1. 实例化Clicker功能模块
@@ -73,4 +93,6 @@ class NavigationMenu:
         pass
 
     def add_games_module(self):
+        pass
+    def add_more_module(self):
         pass
